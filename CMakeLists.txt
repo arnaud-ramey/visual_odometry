@@ -1,6 +1,6 @@
 PROJECT(vo2)
 cmake_minimum_required(VERSION 2.6)
-#set(CMAKE_BUILD_TYPE RelWithDebInfo)
+# Debug, Release, RelWithDebInfo and MinSizeRe
 set(CMAKE_BUILD_TYPE Debug)
 SET(CMAKE_VERBOSE_MAKEFILE OFF)
 FIND_PACKAGE(OpenCV REQUIRED )
