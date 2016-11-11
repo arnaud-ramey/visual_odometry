@@ -44,7 +44,9 @@ http://nghiaho.com/?p=1675
  */
 #ifndef FEATURE_TRACKER_H
 #define FEATURE_TRACKER_H
+
 #include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/video/tracking.hpp>
 #include <stdio.h>
 

@@ -2,6 +2,8 @@
                   |    visual_odometry   |
                   +----------------------+
 
+[![Build Status](https://travis-ci.org/arnaud-ramey/visual_odometry.svg)](https://travis-ci.org/arnaud-ramey/visual_odometry)
+
 A simple OpenCV sample for estimating visual odometry.
 
 License :                  see the LICENSE file.
