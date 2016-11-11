@@ -55,7 +55,8 @@ public:
     // new_features in the current frame and so are less numerous
     unsigned int npts = new_features.size(), arr_size = npts * 2;
     if (old_features.size() != npts) {
-      printf("Solve5PointEssential() inconsistent data!\n", npts, old_features.size());
+      printf("Solve5PointEssential() inconsistent data %i != %li!\n",
+             npts, old_features.size());
       return;
     }
     if (npts < 5) {
@@ -75,7 +76,7 @@ public:
       printf("Solve5PointEssential() returned an error!\n");
       return;
     } // end if (ret)
-    printf("Solve5PointEssential() found %i solutions, first sol:%g\%% inliers of %i pts\n",
+    printf("Solve5PointEssential() found %li solutions, first sol:%g\%% inliers of %i pts\n",
            E.size(), 100. * inliers[0] / npts, npts);
     std::cout << "E:" << E[0] << std::endl;
     std::cout << "P:" << P[0] << std::endl;
@@ -106,8 +107,10 @@ public:
     cv::Mat1d T(4, 4);
     T.setTo(0);
     T(3, 3) = 1;
-    R.copyTo(T(cv::Range(0,3), cv::Range(0,3)));
-    t.copyTo(T(cv::Range(0,3), cv::Range(3,4)));
+    cv::Mat1d T1 = T(cv::Range(0,3), cv::Range(0,3));
+    R.copyTo(T1);
+    cv::Mat1d T2 = T(cv::Range(0,3), cv::Range(3,4));
+    t.copyTo(T2);
     printf("T:%ix%i\n", T.cols, T.rows);
     std::cout << "T:" << T << std::endl;
     printf("_cam_pos_homo:%ix%i\n", _cam_pos_homo.cols, _cam_pos_homo.rows);
